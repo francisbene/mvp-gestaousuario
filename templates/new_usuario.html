@@ -1,17 +1,31 @@
-<form class="c-form" 
-        action="{{url_for('usuario.inserir_usuario')}}" 
-        method="POST"
-        c-append="#lista-usuarios">
+<form class="c-form"
+        {% if usuario %}
+            action="{{url_for('usuario.atualizar_usuario', usuario_id=usuario.id)}}" 
+        {% else %}
+            action="{{url_for('usuario.inserir_usuario')}}"
+        {% endif %}    
+            
+        method="{% if usuario %}PUT{% else %}POST{% endif %}"
+        
+        {% if usuario %}
+            c-swap=".usuario-{{usuario.id}}"
+        {% else %}
+            c-append="#lista-usuarios"
+        {% endif %} 
+    
+        c-reload-container="true">
+    
     <div class="mb-3">
       <label class="form-label">Nome</label>
-      <input type="text" class="form-control" name="nome">
+      <input type="text" class="form-control" name="nome" {% if usuario %}value={{usuario.nome}}{% endif %}>
     </div>
    
     <div class="mb-3">
-        <label id="label-target" class="form-label">Email</label>
-        <input type="text" class="form-control" name="email">
+      <label id="label-target" class="form-label">Email</label>
+      <input type="text" class="form-control" name="email" {% if usuario %}value={{usuario.nome}}{% endif %}>
     </div>
      
-
-    <button type="submit" class="btn btn-primary">Criar Usuário</button>
+    <button type="submit" class="btn btn-primary">
+      {% if usuario %}Salvar{% else %}Criar{% endif%}  
+    </button>
   </form>
