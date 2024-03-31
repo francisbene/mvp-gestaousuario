@@ -1,3 +1,5 @@
-from peewee import SqliteDatabase
+from peewee import PostgresqlDatabase
+import psycopg2
 
-db = SqliteDatabase('usersmanager.db')
+db = PostgresqlDatabase(database='usersmanager', user='postgres', host='localhost',
+                        password='pgadmin')
