@@ -1,6 +1,10 @@
 from flask import Blueprint, render_template, request
 from database.models.usuario import Usuario
 
+# from server.instance import Server
+
+# app, api = server.app, server.api
+
 usuario_route = Blueprint('usuario', __name__)
 
 @usuario_route.route('/')
@@ -31,8 +35,9 @@ def new_usuario():
 @usuario_route.route('/<int:usuario_id>')
 def info_usuario(usuario_id):
     """ exibir informações do usuário """
-
+  
     usuario = Usuario.get_by_id(usuario_id)
+
 
     return render_template('info_usuario.html', usuario=usuario)
 
@@ -49,7 +54,6 @@ def edit_usuario(usuario_id):
 @usuario_route.route('/<int:usuario_id>/update', methods=['PUT'])
 def atualizar_usuario(usuario_id):
     """ Atualizar informações de um usuário """
-
     data = request.json
 
     usuario_atualizado  = Usuario.get_by_id(usuario_id)
@@ -58,15 +62,9 @@ def atualizar_usuario(usuario_id):
     usuario_atualizado.save()
 
     return render_template('item_usuario.html', usuario=usuario_atualizado)
-
+ 
 @usuario_route.route('/<int:usuario_id>/delete', methods=['DELETE'])
 def deletar_usuario(usuario_id):
     usuario = Usuario.get_by_id(usuario_id)
     usuario.delete_instance()
     return {'deleted': 'ok'}
-
-
-
-
-
-
