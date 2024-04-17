@@ -5,7 +5,4 @@ db = PostgresqlDatabase(database='usersmanager', user='postgres', host='localhos
                         password='pgadmin')
 
 
-# from peewee import SqliteDatabase
-
-# db = SqliteDatabase('usermanager.db')
 
