@@ -1,3 +1,11 @@
+# Minha API
+
+Este pequeno projeto faz parte do material diático da Disciplina **Desenvolvimento Full Stack Básico** 
+
+O objetivo aqui é ilutsrar o conteúdo apresentado na primeira aula com um código simples.
+
+---
+
 # Como Executar um Script SQL no pgAdmin para Criar um Banco de Dados
 
 Este guia fornece instruções passo a passo sobre como executar um script SQL no pgAdmin para criar um banco de dados no PostgreSQL.
@@ -14,7 +22,23 @@ Este guia fornece instruções passo a passo sobre como executar um script SQL n
    No painel de navegação do lado esquerdo, expanda o nó do seu servidor PostgreSQL e o nó "Databases". Em seguida, clique com o botão direito do mouse no banco de dados onde deseja criar o novo banco de dados e escolha "Query Tool" no menu de contexto.
 
 4. **Cole o Script SQL:**
-   Na nova janela de consulta SQL que se abre, cole o script SQL que você quer executar. No seu caso, seria o script para criar o banco de dados "usersmanager".
+
+-- Database: usersmanager
+
+-- DROP DATABASE IF EXISTS usersmanager;
+
+CREATE DATABASE usersmanager
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Portuguese_Brazil.1252'
+    LC_CTYPE = 'Portuguese_Brazil.1252'
+    LOCALE_PROVIDER = 'libc'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+
+   Na nova janela de consulta SQL que se abre, cole o script SQL acima. No caso, este seria o script para criar o banco de dados "usersmanager".
 
 5. **Execute o Script:**
    Após colar o script, clique no botão "Execute" na barra de ferramentas superior ou pressione a combinação de teclas "Ctrl + Enter" para executar o script.
@@ -28,14 +52,6 @@ Este guia fornece instruções passo a passo sobre como executar um script SQL n
 ## Notas
 - Certifique-se de ter as permissões adequadas para criar bancos de dados no servidor PostgreSQL ao qual está conectado.
 
-
-# Minha API
-
-Este pequeno projeto faz parte do material diático da Disciplina **Desenvolvimento Full Stack Básico** 
-
-O objetivo aqui é ilutsrar o conteúdo apresentado na primeira aula com um código simples.
-
----
 ## Como executar
 
 Será necessário ter todas as libs python listadas no `requirements.txt` instaladas, é bem simples o processo.
