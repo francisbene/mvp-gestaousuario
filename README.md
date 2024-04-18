@@ -1,14 +1,17 @@
-# Minha API
+# MVP - Minha API Rest
 
-Este pequeno projeto faz parte do material diático da Disciplina **Desenvolvimento Full Stack Básico** 
+Este projeto faz parte da Disciplina 
 
-O objetivo aqui é ilutsrar o conteúdo apresentado na primeira aula com um código simples.
+**MVP**
+
+O MVP desenvolvido busca atender todos os requisitos para resolução do desafio proposto por esta disciplina,  que consiste em desenvolver tanto o backend quanto o frontend do sistema, explorando novas possibilidades, seja criativo e inovador. 
+O seu objetivo é a criação de um MVP (Minimum Viable Product) de um sistema web inovador que aborde um problema real, oferecendo uma solução criativa e inovadora para arquiteturas REST.
 
 ---
+## Como executar a aplicação
 
-# Como Executar um Script SQL no pgAdmin para Criar um Banco de Dados
 
-Este guia fornece instruções passo a passo sobre como executar um script SQL no pgAdmin para criar um banco de dados no PostgreSQL.
+# Primeiramente, Executar um Script SQL no pgAdmin para Criar um Banco de Dados
 
 ## Passos
 
@@ -42,28 +45,28 @@ Este guia fornece instruções passo a passo sobre como executar um script SQL n
    Na nova janela de consulta SQL que se abre, cole o script SQL acima. No caso, este seria o script para criar o banco de dados "usersmanager".
 
 5. **Execute o Script:**
-   Após colar o script, clique no botão "Execute" na barra de ferramentas superior ou pressione a combinação de teclas "Ctrl + Enter" para executar o script.
+   clique no botão "Execute" na barra de ferramentas superior ou pressione a combinação de teclas "Ctrl + Enter" para executar o script.
 
-6. **Verifique o Resultado:**
-   Após a execução do script, verifique a mensagem de confirmação na parte inferior da janela de consulta SQL. Se não houver erros, o banco de dados "usersmanager" deverá ter sido criado com sucesso.
-
-7. **Verifique o Banco de Dados Criado:**
+6. **Verifique o Banco de Dados Criado:**
    No painel de navegação do lado esquerdo, atualize a visualização expandindo o nó "Databases". Você deverá ver o novo banco de dados "usersmanager" listado ali.
-
 
 # Como executar API
 
 ## Passos
 
-Será necessário ter todas as libs python listadas no `requirements.txt` instaladas, é bem simples o processo.
+1. **Clonar o repositório no github :**
 
 Após clonar o repositório, é necessário ir ao diretório raiz do projeto, pelo terminal, para poder executar os comandos descritos abaixo.
 
+2. **Instalar todas dependências/bibliotecas necessárias :**
+
+Será necessário ter todas as libs python listadas no `requirements.txt` instaladas, é bem simples o processo.
+'''
 $ pip install -r requirements.txt
 ```
 Este comando instala as dependências/bibliotecas, descritas no arquivo `requirements.txt`.
 '''
-Para executar a API  basta executar:
+Para executar a API  basta executar no terninal:
 
 $ python main.py
 
