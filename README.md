@@ -22,21 +22,22 @@ Este guia fornece instruções passo a passo sobre como executar um script SQL n
    No painel de navegação do lado esquerdo, expanda o nó do seu servidor PostgreSQL e o nó "Databases". Em seguida, clique com o botão direito do mouse no banco de dados onde deseja criar o novo banco de dados e escolha "Query Tool" no menu de contexto.
 
 4. **Cole o Script SQL:**
+   ''''
+         -- Database: usersmanager
 
--- Database: usersmanager
+         -- DROP DATABASE IF EXISTS usersmanager;
 
--- DROP DATABASE IF EXISTS usersmanager;
-
-CREATE DATABASE usersmanager
-    WITH
-    OWNER = postgres
-    ENCODING = 'UTF8'
-    LC_COLLATE = 'Portuguese_Brazil.1252'
-    LC_CTYPE = 'Portuguese_Brazil.1252'
-    LOCALE_PROVIDER = 'libc'
-    TABLESPACE = pg_default
-    CONNECTION LIMIT = -1
-    IS_TEMPLATE = False;
+         CREATE DATABASE usersmanager
+            WITH
+            OWNER = postgres
+            ENCODING = 'UTF8'
+            LC_COLLATE = 'Portuguese_Brazil.1252'
+            LC_CTYPE = 'Portuguese_Brazil.1252'
+            LOCALE_PROVIDER = 'libc'
+            TABLESPACE = pg_default
+            CONNECTION LIMIT = -1
+            IS_TEMPLATE = False;
+   ''''
 
    Na nova janela de consulta SQL que se abre, cole o script SQL acima. No caso, este seria o script para criar o banco de dados "usersmanager".
 
@@ -49,34 +50,31 @@ CREATE DATABASE usersmanager
 7. **Verifique o Banco de Dados Criado:**
    No painel de navegação do lado esquerdo, atualize a visualização expandindo o nó "Databases". Você deverá ver o novo banco de dados "usersmanager" listado ali.
 
-## Notas
-- Certifique-se de ter as permissões adequadas para criar bancos de dados no servidor PostgreSQL ao qual está conectado.
 
-## Como executar
+# Como executar API
+
+## Passos
 
 Será necessário ter todas as libs python listadas no `requirements.txt` instaladas, é bem simples o processo.
 
 Após clonar o repositório, é necessário ir ao diretório raiz do projeto, pelo terminal, para poder executar os comandos descritos abaixo.
 
-> É fortemente indicado o uso de ambientes virtuais do tipo [virtualenv](https://virtualenv.pypa.io/en/latest/installation.html).
-
+$ pip install -r requirements.txt
 ```
-(env)$ pip install -r requirements.txt
-```
-
 Este comando instala as dependências/bibliotecas, descritas no arquivo `requirements.txt`.
-
+'''
 Para executar a API  basta executar:
 
-```
-(env)$ flask run --host 0.0.0.0 --port 5000
-```
-
-Em modo de desenvolvimento é recomendado executar utilizando o parâmetro reload, que reiniciará o servidor
-automaticamente após uma mudança no código fonte. 
+$ python main.py
 
 ```
-(env)$ flask run --host 0.0.0.0 --port 5000 --reload
+Este comando executa api
 ```
 
-Abra o [http://localhost:5000/#/](http://localhost:5000/#/) no navegador para verificar o status da API em execução.
+Abra o [http://localhost:5000]no navegador para verificar o status da API em execução.
+
+# Para acessar documentação swagger
+
+Para acessar a documentação no swagger basta executar:
+
+Abra o [http://localhost:5000/apidocs/] no navegador para verificar a documentação da API com swagger.
